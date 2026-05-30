@@ -54,6 +54,6 @@ quiz-scanner/
 └── demo/                - Screenshots
 
 ## Student
-Name: Mahnoor
+Name: Mahnoor, Alia
 Course: Artificial Intelligence
 Semester: SP2026
