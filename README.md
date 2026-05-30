@@ -1,75 +1,60 @@
 # 🎯 Quiz Scanner & Grading System
 
-An intelligent desktop-based application that automatically scans quiz answer sheets, decodes QR-based answer keys, extracts student information, detects marked bubbles, grades quizzes, and generates structured reports.
+An intelligent desktop application that automatically scans quiz answer sheets, extracts student information, detects marked answers, grades quizzes, and generates structured reports using Computer Vision and OCR.
 
-Built as an **Artificial Intelligence (BSE-4A)** semester project for **SP2026**, this system combines **Computer Vision, OCR, QR Code Decoding, and Automated Grading** into one smart solution.
-
----
-
-## 📌 Project Overview
-
-Traditional quiz checking is time-consuming and prone to human error. This project automates the complete quiz evaluation process using image processing and AI-based techniques.
-
-The system can:
-
-✅ Decode QR-based answer keys  
-✅ Read handwritten student details using OCR  
-✅ Detect filled answer bubbles automatically  
-✅ Grade quizzes instantly  
-✅ Process multiple quiz sheets in batch mode  
-✅ Export results to Excel reports
+This project automates the traditional quiz checking process, making evaluation faster, more accurate, and efficient.
 
 ---
 
 ## ✨ Features
 
 ### 🔍 QR Code Decoding
-- Detects QR codes from quiz sheets
-- Extracts encoded answer keys
-- Supports rotated or slightly skewed quiz images
+- Detects and decodes QR codes from quiz sheets
+- Extracts answer keys automatically
+- Supports slightly rotated or skewed images
 
 ### 📝 Student Information Extraction
-- Reads **Student Name**
-- Reads **Registration Number**
+- Extracts **Student Name**
+- Extracts **Registration Number**
 - Uses **OCR (Optical Character Recognition)**
 
 ### ⭕ Bubble Sheet Detection
-- Detects marked bubbles (A/B/C/D)
+- Detects selected answers (A/B/C/D)
 - Handles:
-  - ✔️ Filled answers
+  - ✅ Filled answers
   - ➖ Unattempted questions
-  - ⚠️ Multiple marked answers (invalid)
+  - ⚠️ Multiple selected answers
 
 ### 📊 Automatic Quiz Grading
-- Compares student answers with answer key
+- Compares student answers with the answer key
 - Calculates:
   - Correct answers
   - Incorrect answers
   - Unattempted questions
 - Generates:
+  - Final Score
   - Percentage
-  - Final marks
-  - Letter Grade (A/B/C/D/F)
+  - Letter Grade
 
 ### 📁 Batch Processing
-- Process multiple quiz sheets at once
-- Automatically generates Excel reports
-- Stores results in structured format
+- Processes multiple quiz sheets automatically
+- Exports results to Excel
+- Generates structured reports
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Libraries & Tools Used
 
-| Technology | Purpose |
-|------------|---------|
-| Python 3.12+ | Core Development |
-| OpenCV | Image Processing |
-| Pyzbar | QR Code Detection |
+| Library / Tool | Purpose |
+|----------------|---------|
+| Python | Core Programming Language |
+| OpenCV | Image Processing & Bubble Detection |
+| Pyzbar | QR Code Decoding |
 | Tesseract OCR | Text Recognition |
 | Pytesseract | OCR Integration |
 | Pandas | Data Processing |
-| OpenPyXL | Excel File Generation |
-| Pillow | Image Handling |
+| OpenPyXL | Excel Report Generation |
+| Pillow (PIL) | Image Handling |
 | CustomTkinter | Desktop GUI |
 
 ---
@@ -88,13 +73,16 @@ quiz_scanner/
 │
 ├── samples/                 # Sample Quiz Images
 ├── output/                  # Generated Excel Reports
-├── demo/                    # Screenshots / Demo Files
+├── demo/                    # Screenshots
+│   ├── ss 1.png             # Main Interface
+│   └── ss 2.png             # Output / Result Screen
+│
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation Guide
+## ⚙️ Installation
 
 ### 1️⃣ Clone the Repository
 
@@ -105,7 +93,7 @@ cd quiz_scanner
 
 ---
 
-### 2️⃣ Install Python Dependencies
+### 2️⃣ Install Required Libraries
 
 Run the following command:
 
@@ -117,11 +105,11 @@ pip install opencv-python pyzbar pillow pytesseract openpyxl pandas customtkinte
 
 ### 3️⃣ Install Tesseract OCR
 
-Download and install **Tesseract OCR** from:
+Download and install **Tesseract OCR**:
 
 🔗 https://github.com/UB-Mannheim/tesseract/wiki
 
-After installation, make sure Tesseract is added to your system path.
+After installation, make sure Tesseract is properly configured in your system path.
 
 ---
 
@@ -140,12 +128,12 @@ python main.py
 
 1. Launch the application  
 2. Click **Upload Quiz Image**  
-3. Select a quiz answer sheet image  
+3. Select a quiz sheet image  
 4. Click **Scan & Grade**  
 5. View:
-   - Student details
-   - Detected answers
-   - Score & grading report
+   - Student Details
+   - Detected Answers
+   - Final Score & Grade
 
 ---
 
@@ -166,53 +154,51 @@ output/results.xlsx
 
 ---
 
-## 📷 Demo & Screenshots
+## 📷 Screenshots
 
-Add screenshots of:
+### 🖥️ Main Interface
 
-- Desktop Interface  
-- Quiz Upload Screen  
-- Bubble Detection Result  
-- Excel Report Output  
+![Main Interface](demo/ss%201.png)
 
-*(Recommended for better project presentation)*
+### 📊 Scan Result / Output
+
+![Output Result](demo/ss%202.png)
 
 ---
 
-## ✅ Tasks Completed
+## ✅ Completed Tasks
 
 | Task | Description | Status |
 |------|-------------|--------|
 | Task 1 | QR Code Decoding | ✅ Completed |
-| Task 2 | Student Info Extraction (OCR) | ✅ Completed |
+| Task 2 | Student Information Extraction (OCR) | ✅ Completed |
 | Task 3 | Bubble Sheet Reading | ✅ Completed |
 | Task 4 | Quiz Grading | ✅ Completed |
 | Task 5 | Batch Processing & Report Generation | ✅ Completed |
 
 ---
 
-## 🎓 Academic Information
+## 🔮 Future Improvements
 
-**Course:** Artificial Intelligence (BSE-4A)  
-**Semester:** SP2026  
-
+- Real-time camera scanning
+- Improved handwriting recognition
+- Mobile application support
+- AR-based live quiz grading
+- Better image correction for low-quality scans
 
 ---
 
-## 🔮 Future Improvements
+## 👩‍💻 Contributors
 
-- Real-time camera scanning  
-- Better handwriting recognition  
-- Mobile app version  
-- AR-based live grading system  
-- Improved accuracy for damaged quiz sheets
+- Mahnoor Inam
+- Alia  Ahmad
 
 ---
 
 ## 📜 License
 
-This project was developed for **academic and educational purposes only**.
+This project is intended for **educational and academic purposes only**.
 
 ---
 
-### ⭐ If you found this project helpful, consider giving it a star!
+⭐ If you like this project, consider giving it a star!
